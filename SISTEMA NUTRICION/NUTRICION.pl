@@ -376,16 +376,19 @@ tratamiento(licuado_redu_mess) :-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
-
 /*resfriado*/
 
-tratamiento(licuado_de_naranja_mandarina_piña_limon_y_miel) :-
-			      send(@lblExp1, selection('licuado_de_naranja_mandarina_piña_limon_y_miel')),
-			      send(@lblExp2,selection('USTED SUFRE DE RESFRIADO.
-PREPARACION: 2 naranjas, 2 mandarinas, 1 rebanada grue de miel de abejasa de piña, 1 limon y una cucharad.
-\n DESCRIPCION: Contiene vitamina B,C,D y ayuda a mantener excelentemente el sistema inmunologico, excelente para las afecciones de las vias respiratorias')).
+tratamiento(osteoporosis) :-
+			      send(@lblExp1, selection('ENFERMEDAD OSTEOPOROSIS. \n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA DETERMINAMOS SU TRATAMIENTO: \n
+			      Consumo de sustancias toxicas, poco consumo de calcio, dolor de articulaciones, dolores musculares, fragilidad en los huesos \n 
+			      debilidad en los huesos, vulnerabilidad ante fracturas, dolor de espalda, perdida de estatura, deformacion en la columna vertebral.')),
+			      send(@lblExp2,selection('USTED SUFRE DE OSTEPOROSIS. \n
+Tratamiento: Los fármacos que se emplean en la actualidad para combatir la osteoporosis consiguen \n
+detener la resorción ósea y evitar la pérdida del mineral. Son los llamados inhibidores de la \n
+resorción entre los que se encuentran, los estrógenos, las calcitoninas, los bisfosfonatos (etidronato, \n
+alendronato y risedronato), los moduladores selectivos de los receptores estrogénicos (raloxifeno) \n
+e incluso las estatinas, unos fármacos que inicialmente se empleaban para combatir el colesterol. \n 
+DESCRIPCION: Aunque el tratamiento farmacológico es muy importante existen otras medidas encaminadas a corregir deficiencias nutricionales y mejorar el estilo de vida que pueden evitar caídas y minimizar la intensidad del impacto de la enfermedad.')).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
