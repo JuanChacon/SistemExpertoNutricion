@@ -3,13 +3,13 @@
 :- use_module(library(pce_style_item)).
 :- dynamic color/2.
 
-/*Sistema experto encontrado en la dirección url: http://documents.mx/documents/sistema-experto-de-licuados-nutritivos-y-medicinales.html.
+/*Sistema experto encontrado en la direcciÃ³n url: http://documents.mx/documents/sistema-experto-de-licuados-nutritivos-y-medicinales.html.
 Este se tomo como base para adecuarlo a nuestras necesidades.
 Quienes desarrollaron este sistema tienen el credito total ya que
 nosotros solo lo modificamos.
-Fecha de modificación: 08/05/2017 12:36:25 a.m
-La información que se utilizo para establecer los padecimientos y el
-como evitarlos se tomaron de una página web, este es el url:
+Fecha de modificaciÃ³n: 08/05/2017 12:36:25 a.m
+La informaciÃ³n que se utilizo para establecer los padecimientos y el
+como evitarlos se tomaron de una pÃ¡gina web, este es el url:
 https://www.lifeder.com/enfermedades-nutricionales/.
 */
 resource(nutricion, image, image('nu.jpg')).
@@ -80,6 +80,8 @@ hipotesis(enfermedades_cardiovasculares) :- enfermedades_cardiovasculares,!.
 
 hipotesis(diabetes) :-diabetes,!.
 
+hipotesis(osteoporosis) :- osteoporosis,!.
+
 /*
 hipotesis(licuado_de_zanahoria_y_apio) :- licuado_de_zanahoria_y_apio,!.
 
@@ -87,7 +89,7 @@ hipotesis(licuado_de_col_toronja_y_apio) :- licuado_de_col_toronja_y_apio,!.
 
 hipotesis(licuado_redu_mess) :- licuado_redu_mess,!.*/
 
-hipotesis(licuado_de_naranja_mandarina_piña_limon_y_miel) :- licuado_de_naranja_mandarina_piña_limon_y_miel,!.
+hipotesis(licuado_de_naranja_mandarina_piÃ±a_limon_y_miel) :- licuado_de_naranja_mandarina_piÃ±a_limon_y_miel,!.
 
 hipotesis(licuado_de_manzana_lechuga_y_ajonjoli) :- licuado_de_manzana_lechuga_y_ajonjoli,!.
 
@@ -97,7 +99,7 @@ hipotesis(licuado_de_manzana_y_zanahoria) :- licuado_de_manzana_y_zanahoria,!.
 
 hipotesis(licuado_de_zanahoria_y_espinacas) :- licuado_de_zanahoria_y_espinacas,!.
 
-hipotesis(licuado_de_piña_apio_y_durazno) :- licuado_de_piña_apio_y_durazno,!.
+hipotesis(licuado_de_piÃ±a_apio_y_durazno) :- licuado_de_piÃ±a_apio_y_durazno,!.
 
 hipotesis(licuado_de_yoghurt_y_almendras) :- licuado_de_yoghurt_y_almendra,!.
 
@@ -108,29 +110,29 @@ hipotesis(licuado_de_valeriana_manzanilla_y_menta) :- licuado_de_valeriana_manza
 hipotesis(desconocido). /* no existe*/
 
 
-/*% reglas de identificación*/
+/*% reglas de identificaciÃ³n*/
 
 /*diabetes*/
 
 obesidad :- obesidadd,
 
-		verifica('¿Consume comidas ricas en grasas y azúcares?'),
-		verifica('¿Se saltea alguna comida durante el día?'),
-		verifica('¿Comienza la jornada laboral sin desayunar?'),
-		verifica('¿Toma bebidas alcohólicas?'),
-		verifica('¿No realiza alguna actividad fisica?'),
-		verifica('¿Consume energía(calorias) superior al gasto energético?'),
-		verifica('¿Usted lleva una vida sedentaria?').
+		verifica('Â¿Consume comidas ricas en grasas y azÃºcares?'),
+		verifica('Â¿Se saltea alguna comida durante el dÃ­a?'),
+		verifica('Â¿Comienza la jornada laboral sin desayunar?'),
+		verifica('Â¿Toma bebidas alcohÃ³licas?'),
+		verifica('Â¿No realiza alguna actividad fisica?'),
+		verifica('Â¿Consume energÃ­a(calorias) superior al gasto energÃ©tico?'),
+		verifica('Â¿Usted lleva una vida sedentaria?').
 
 
-/*estreñimiento, enfermedades_cardiovasculares*/
+/*estreÃ±imiento, enfermedades_cardiovasculares*/
 
 enfermedades_cardiovasculares :- enfermedades_cardio ,
-		verifica('¿Consumo frecuente de alimentos ricos en grasas de origen animal?'),
-		verifica('¿Tiene el hábito de fumar?'),
-		verifica('¿No realiza alguna actividad fisica?'),
-		verifica('¿Padece hipertensión?'),
-                verifica('¿Tiene familiares que padecen esta enfermedad?').
+		verifica('Â¿Consumo frecuente de alimentos ricos en grasas de origen animal?'),
+		verifica('Â¿Tiene el hÃ¡bito de fumar?'),
+		verifica('Â¿No realiza alguna actividad fisica?'),
+		verifica('Â¿Padece hipertensiÃ³n?'),
+                verifica('Â¿Tiene familiares que padecen esta enfermedad?').
 
 
 
@@ -142,67 +144,67 @@ enfermedades_cardiovasculares :- enfermedades_cardio ,
 
 diabetes :- diabet,
 
-		verifica('¿Tiene frecuencia en orinar?'),
-                verifica('¿Tiene sensación de hambre inusual?'),
-		verifica('¿Tiene sensación excesiva de sed?'),
-                verifica('¿Padece de pérdida de peso?').
+		verifica('Â¿Tiene frecuencia en orinar?'),
+                verifica('Â¿Tiene sensaciÃ³n de hambre inusual?'),
+		verifica('Â¿Tiene sensaciÃ³n excesiva de sed?'),
+                verifica('Â¿Padece de pÃ©rdida de peso?').
 /*
 licuado_de_zanahoria_y_apio :- sobre_peso,
-		verifica('¿fatiga con poco esfuerzo?'),
-		verifica('¿sensacion excesiva de sed?').
+		verifica('Â¿fatiga con poco esfuerzo?'),
+		verifica('Â¿sensacion excesiva de sed?').
 
 licuado_de_col_toronja_y_apio :- sobre_peso,
-		verifica('¿fatiga con poco esfuerzo?'),
-		verifica('¿sensacion excesiva de sed?').
+		verifica('Â¿fatiga con poco esfuerzo?'),
+		verifica('Â¿sensacion excesiva de sed?').
 
 licuado_redu_mess :- sobre_peso,
-		verifica('¿fatiga con poco esfuerzo?'),
-		verifica('¿sensacion excesiva de sed?').
+		verifica('Â¿fatiga con poco esfuerzo?'),
+		verifica('Â¿sensacion excesiva de sed?').
 
 */
 
 
 /*resfriado*/
 
-licuado_de_naranja_mandarina_piña_limon_y_miel :- resfriado,
-		verifica('¿goteo y congestion de la nariz?'),
-		verifica('¿cosquilleo en la garganta?'),
-		verifica('¿tiene estornudos?'),
-		verifica('¿ojos llorosos?'),
-		verifica('¿fiebre baja?'),
-		verifica('¿dolor de garganta?'),
-		verifica('¿tos seca y leve?'),
-		verifica('¿dolor de cabeza?'),
-		verifica('¿tiene escalofrios?').
+licuado_de_naranja_mandarina_piÃ±a_limon_y_miel :- resfriado,
+		verifica('Â¿goteo y congestion de la nariz?'),
+		verifica('Â¿cosquilleo en la garganta?'),
+		verifica('Â¿tiene estornudos?'),
+		verifica('Â¿ojos llorosos?'),
+		verifica('Â¿fiebre baja?'),
+		verifica('Â¿dolor de garganta?'),
+		verifica('Â¿tos seca y leve?'),
+		verifica('Â¿dolor de cabeza?'),
+		verifica('Â¿tiene escalofrios?').
 
 
 
 /*depresion*/
 licuado_de_manzana_lechuga_y_ajonjoli :- depresion,
-		verifica('¿te sientes irritable?'),
-		verifica('¿tienes dificultades para conciliar el sueño por las noches?'),
-		verifica('¿te sientes sin valor o insignificante?'),
-		verifica('¿te sientes irritable?'),
-		verifica('¿ya no disfrutas las cosas que antes te gustaba hacer?'),
-		verifica('¿te sientes molesto o ansioso sin saber porqué?').
+		verifica('Â¿te sientes irritable?'),
+		verifica('Â¿tienes dificultades para conciliar el sueÃ±o por las noches?'),
+		verifica('Â¿te sientes sin valor o insignificante?'),
+		verifica('Â¿te sientes irritable?'),
+		verifica('Â¿ya no disfrutas las cosas que antes te gustaba hacer?'),
+		verifica('Â¿te sientes molesto o ansioso sin saber porquÃ©?').
 
 licuado_de_kiwi_manzana_naranja_y_fresa :- depresion,
-		verifica('¿te sientes irritable?'),
-		verifica('¿tienes dificultades para conciliar el sueño por las noches?'),
-		verifica('¿te sientes sin valor o insignificante?'),
-		verifica('¿te sientes irritable?'),
-		verifica('¿ya no disfrutas las cosas que antes te gustaba hacer?'),
-		verifica('¿te sientes molesto o ansioso sin saber porqué?').
+		verifica('Â¿te sientes irritable?'),
+		verifica('Â¿tienes dificultades para conciliar el sueÃ±o por las noches?'),
+		verifica('Â¿te sientes sin valor o insignificante?'),
+		verifica('Â¿te sientes irritable?'),
+		verifica('Â¿ya no disfrutas las cosas que antes te gustaba hacer?'),
+		verifica('Â¿te sientes molesto o ansioso sin saber porquÃ©?').
 
 
 
 
 /*colitis*/
 licuado_de_manzana_y_zanahoria :- colitis,
-		verifica('¿tiene nauseas?'),
-		verifica('¿tiene colicos?'),
-		verifica('¿ruidos en el abdomen?'),
-		verifica('¿estreñimiento o diarrea frecuentemente?').
+		verifica('Â¿tiene nauseas?'),
+		verifica('Â¿tiene colicos?'),
+		verifica('Â¿ruidos en el abdomen?'),
+		verifica('Â¿estreÃ±imiento o diarrea frecuentemente?').
 
 
 
@@ -210,37 +212,37 @@ licuado_de_manzana_y_zanahoria :- colitis,
 /*hemorroides*/
 licuado_de_zanahoria_y_espinacas :- hemorroides,
 
-		verifica('¿tiene tension?').
+		verifica('Â¿tiene tension?').
 
 
 
 
 /*colesterol*/
-licuado_de_piña_apio_y_durazno :- colesterol,
+licuado_de_piÃ±a_apio_y_durazno :- colesterol,
 
-		verifica('¿infarto agudo?'),
-		verifica('¿tiene usted hipertension?').
+		verifica('Â¿infarto agudo?'),
+		verifica('Â¿tiene usted hipertension?').
 
 
 
 /*vistas_cansada*/
 licuado_de_yoghurt_y_almendra :- vista_cansada,
-                verifica('¿le cuesta ver nítidamente objetos cercanos?').
+                verifica('Â¿le cuesta ver nÃ­tidamente objetos cercanos?').
 
 
 
-/*infeccion_de_riñones*/
-licuado_de_naranja_pepino_y_jicama :- infeccion_de_riñones,
+/*infeccion_de_riÃ±ones*/
+licuado_de_naranja_pepino_y_jicama :- infeccion_de_riÃ±ones,
 
-                verifica('¿necesidad de orinar con mucha frecuencia?'),
-                verifica('¿dolor de espalda baja?').
+                verifica('Â¿necesidad de orinar con mucha frecuencia?'),
+                verifica('Â¿dolor de espalda baja?').
 
 
 
 /*insomnio*/
 licuado_de_valeriana_manzanilla_y_menta :- insomnio,
-                verifica('¿dificultad para conciliar el sueño?'),
-                verifica('¿ansiedad?').
+                verifica('Â¿dificultad para conciliar el sueÃ±o?'),
+                verifica('Â¿ansiedad?').
 
 
 
@@ -249,25 +251,25 @@ licuado_de_valeriana_manzanilla_y_menta :- insomnio,
 
 /*******************************************Reglas de Clasificacion************************************/
 
-obesidadd :- verifica('¿Comes más de tres comidas al dia y no haces ejercicio?'),!.
-enfermedades_cardio :- verifica('¿Tienes altos niveles de colesterol?'),!.
-diabet :- verifica('¿Sensación de malestar en el estómago y vómitos.?'),!.
-resfriado :- verifica('¿goteo y congestion de la nariz?'),!.
-depresion :- verifica('¿te sientes irritable?'),!.
-colitis :- verifica('¿dolor abdominal?'),!.
-hemorroides :- verifica('¿esta usted estresado?'),!.
-colesterol :- verifica('¿angina de pecho?'),!.
-vista_cansada :- verifica('¿Necesita más luz de la acostumbrada para leer?'),!.
-infeccion_de_riñones :- verifica('¿dolor o ardor al orinar?'),!.
-insomnio :- verifica('¿se despierta constantemente durante la madrugada?'),!.
+obesidadd :- verifica('Â¿Comes mÃ¡s de tres comidas al dia y no haces ejercicio?'),!.
+enfermedades_cardio :- verifica('Â¿Tienes altos niveles de colesterol?'),!.
+diabet :- verifica('Â¿SensaciÃ³n de malestar en el estÃ³mago y vÃ³mitos.?'),!.
+resfriado :- verifica('Â¿goteo y congestion de la nariz?'),!.
+depresion :- verifica('Â¿te sientes irritable?'),!.
+colitis :- verifica('Â¿dolor abdominal?'),!.
+hemorroides :- verifica('Â¿esta usted estresado?'),!.
+colesterol :- verifica('Â¿angina de pecho?'),!.
+vista_cansada :- verifica('Â¿Necesita mÃ¡s luz de la acostumbrada para leer?'),!.
+infeccion_de_riÃ±ones :- verifica('Â¿dolor o ardor al orinar?'),!.
+insomnio :- verifica('Â¿se despierta constantemente durante la madrugada?'),!.
 
 
 
 /*diabetes*/
 tratamiento(obesidad) :-
 		        send(@lblExp1, selection(' ENFERMEDAD OBESIDAD.\n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA DETERMINAMOS SU TRATAMIENTO:
-			Saltea comidas durante el dia, comienza la jornada laboral sin desayunar,tomar bebidas alcohólicas,no realiza alguna actividad fisica,consume energía(calorias) superior al gasto energético, \n usted lleva una vida sedentaria.COMO PREVENIR LA OBESIDAD                                      \n\n ')),
-			send(@lblExp2, selection('	\n\n *Comiendo más verduras y frutas naturales,de preferencia crudas.Las frutas en conserva tienen azúcar.  \n\n *Consumiendo leche y yogurt descremados o con bajo contenido de grasa. \n\n  *Comiendo cantidades moderadas de pan,carne,cereales y papas, en lo posible preferir productos integrales. \n\n *Reduciendo al mínimo el consumo de azúcar, dulces,bebidas azúcaradas tales como soda y otros alimentos dulces. \n\n  *Realizando actividades que aumenten el gasto energético para reducir la grasa corporal.\n Por ejemplo: caminar, subir y bajar escaleras, hacer deporte, jugar, bailar,entre otros. Esto significa dedicar menos tiempo a ver televisión y a las actividades sedentarias. ')).
+			Saltea comidas durante el dia, comienza la jornada laboral sin desayunar,tomar bebidas alcohÃ³licas,no realiza alguna actividad fisica,consume energÃ­a(calorias) superior al gasto energÃ©tico, \n usted lleva una vida sedentaria.COMO PREVENIR LA OBESIDAD                                      \n\n ')),
+			send(@lblExp2, selection('	\n\n *Comiendo mÃ¡s verduras y frutas naturales,de preferencia crudas.Las frutas en conserva tienen azÃºcar.  \n\n *Consumiendo leche y yogurt descremados o con bajo contenido de grasa. \n\n  *Comiendo cantidades moderadas de pan,carne,cereales y papas, en lo posible preferir productos integrales. \n\n *Reduciendo al mÃ­nimo el consumo de azÃºcar, dulces,bebidas azÃºcaradas tales como soda y otros alimentos dulces. \n\n  *Realizando actividades que aumenten el gasto energÃ©tico para reducir la grasa corporal.\n Por ejemplo: caminar, subir y bajar escaleras, hacer deporte, jugar, bailar,entre otros. Esto significa dedicar menos tiempo a ver televisiÃ³n y a las actividades sedentarias. ')).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -282,12 +284,12 @@ tratamiento(obesidad) :-
 
 
 
-/*estreñimiento  */
+/*estreÃ±imiento  */
 
 tratamiento(enfermedades_cardiovasculares) :-
 		        send(@lblExp1, selection(' ENFERMEDAD CARDIOVASCULAR.\n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA DETERMINAMOS SU TRATAMIENTO:
-Consumo frecuente de alimentos ricos en grasas de origen animal, tiene el hábito de fumar,no realiza alguna actividad fisica, padece hipertensión, tiene familiares que padecen esta enfermedad.
-			\n COMO PREVENIR LAS ENFERMEDADES CARDIOVASCULARES \n\n *Comiendo más verduras y frutas, de preferencia crudas. \n\n *Comiendo menos carnes rojas,cecinas, cualquier alimento de origen animal. \n\n *Comer más carnes blancas como pescado, pavo o pollo. \n\n *Aumentando el ejercicio físico para fortalecer el corazón.')),
+Consumo frecuente de alimentos ricos en grasas de origen animal, tiene el hÃ¡bito de fumar,no realiza alguna actividad fisica, padece hipertensiÃ³n, tiene familiares que padecen esta enfermedad.
+			\n COMO PREVENIR LAS ENFERMEDADES CARDIOVASCULARES \n\n *Comiendo mÃ¡s verduras y frutas, de preferencia crudas. \n\n *Comiendo menos carnes rojas,cecinas, cualquier alimento de origen animal. \n\n *Comer mÃ¡s carnes blancas como pescado, pavo o pollo. \n\n *Aumentando el ejercicio fÃ­sico para fortalecer el corazÃ³n.')),
 			send(@lblExp2, selection('\n\n ')).
 
 
@@ -296,7 +298,7 @@ Consumo frecuente de alimentos ricos en grasas de origen animal, tiene el hábito
 %
                         /*
 tratamiento(licuado_de_pera_naranja_y_linaza) :-
-		        send(@lblExp1, selection(' ENFERMEDAD ESTREÑIMIENTO.\n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA DETERMINAMOS SU TRATAMIENTO:
+		        send(@lblExp1, selection(' ENFERMEDAD ESTREÃ‘IMIENTO.\n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA DETERMINAMOS SU TRATAMIENTO:
 			dificultad y dolor al defecar, defecarmenos de 3 veces por semana, sentirse perezoso, dolor abdominal
 			\n\n TRATAMIENTO A SEGUIR: LICUADO DE PERA, NARANJA Y LINAZA\n\n')),
 			send(@lblExp2, selection('\n\n PRE.')).
@@ -304,7 +306,7 @@ tratamiento(licuado_de_pera_naranja_y_linaza) :-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 tratamiento(licuado_de_esparragos_fresa_y_kiwi) :-
-		        send(@lblExp1, selection(' ENFERMEDAD ESTREÑIMIENTO.\n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA DETERMINAMOS SU TRATAMIENTO:
+		        send(@lblExp1, selection(' ENFERMEDAD ESTREÃ‘IMIENTO.\n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA DETERMINAMOS SU TRATAMIENTO:
 			dificultad y dolor al defecar, defecarmenos de 3 veces por semana, sentirse perezoso, dolor abdominal
 			\n\n TRATAMIENTO A SEGUIR: LICUADO DE ESPARRAGOS, FRESA Y KIWI\n\n')),
 			send(@lblExp2, selection('\n\n REPARACION: 2 esparragos, 5 fresas y 2 kiwi, licua y bebe al instante.
@@ -321,9 +323,9 @@ tratamiento(licuado_de_esparragos_fresa_y_kiwi) :-
 /*sobre_peso*/
 tratamiento(diabetes) :-
 		send(@lblExp1, selection(' ENFERMEDAD DIABETES.\n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA DETERMINAMOS SU TRATAMIENTO:
-Sensación de malestar en el estómago y vómitos, frecuencia en orinar, sensación de hambre inusual, sensacion excesiva de sed, pérdida de peso.
+SensaciÃ³n de malestar en el estÃ³mago y vÃ³mitos, frecuencia en orinar, sensaciÃ³n de hambre inusual, sensacion excesiva de sed, pÃ©rdida de peso.
 		\n\n COMO PREVENIR LA DIABETES \n\n')),
-		send(@lblExp2, selection('\n\n\n\n\n *Manteniendo el peso normal. \n *Comiendo más verduras, frutas y leguminosas. \n *Comiendo menos alimentos ricos en grasas y azúcar. \n *Realizando actividades físicas diariamente.')).
+		send(@lblExp2, selection('\n\n\n\n\n *Manteniendo el peso normal. \n *Comiendo mÃ¡s verduras, frutas y leguminosas. \n *Comiendo menos alimentos ricos en grasas y azÃºcar. \n *Realizando actividades fÃ­sicas diariamente.')).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -332,7 +334,7 @@ tratamiento(licuado_de_zanahoria_y_apio) :-
 		sudor excesivo, fatiga con poco esfuerzo, sensacion excesiva de sed
 		\n\n TRATAMIENTO A SEGUIR: LICUADO DE ZANAHORIA Y APIO\n\n')),
 		send(@lblExp2, selection('\n\n PREPARACION: 1 vaso de jugo de zanahoria, 1 vaso 1/2 de jugo de apio.
-\n\n FUNCION: El jugo de zanahoria y apio ayuda a combatir el sobrepeso, inhibe el apetito entre comidas, es diurético, combate la obesidad.')).
+\n\n FUNCION: El jugo de zanahoria y apio ayuda a combatir el sobrepeso, inhibe el apetito entre comidas, es diurÃ©tico, combate la obesidad.')).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -349,7 +351,7 @@ tratamiento(licuado_redu_mess) :-
 		send(@lblExp1, selection(' ENFERMEDAD SOBRE PESO.\n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA DETERMINAMOS SU TRATAMIENTO:
 		sudor excesivo, fatiga con poco esfuerzo, sensacion excesiva de sed
 		\n\n TRATAMIENTO A SEGUIR: LICUADO REDU MESS\n\n')),
-		send(@lblExp2, selection('\n\n PREPARACION: 1 piña, 3 pepinos, una hoja de sabila, 3 vasos de agua.
+		send(@lblExp2, selection('\n\n PREPARACION: 1 piÃ±a, 3 pepinos, una hoja de sabila, 3 vasos de agua.
 \n\n FUNCION: tomar el primero en ayunas, el segundo por la tarde y el tercero antes de dormir. No es necesario hacer dieta, reduce el colesterol')).
 
 
@@ -361,10 +363,10 @@ tratamiento(licuado_redu_mess) :-
 
 /*resfriado*/
 
-tratamiento(licuado_de_naranja_mandarina_piña_limon_y_miel) :-
-			      send(@lblExp1, selection('licuado_de_naranja_mandarina_piña_limon_y_miel')),
+tratamiento(licuado_de_naranja_mandarina_piÃ±a_limon_y_miel) :-
+			      send(@lblExp1, selection('licuado_de_naranja_mandarina_piÃ±a_limon_y_miel')),
 			      send(@lblExp2,selection('USTED SUFRE DE RESFRIADO.
-PREPARACION: 2 naranjas, 2 mandarinas, 1 rebanada grue de miel de abejasa de piña, 1 limon y una cucharad.
+PREPARACION: 2 naranjas, 2 mandarinas, 1 rebanada grue de miel de abejasa de piÃ±a, 1 limon y una cucharad.
 \n DESCRIPCION: Contiene vitamina B,C,D y ayuda a mantener excelentemente el sistema inmunologico, excelente para las afecciones de las vias respiratorias')).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -376,22 +378,22 @@ PREPARACION: 2 naranjas, 2 mandarinas, 1 rebanada grue de miel de abejasa de piñ
 
 tratamiento(licuado_de_manzana_lechuga_y_ajonjoli) :-
 		        send(@lblExp1, selection('USTED SUFRE DE DEPRESION.
-\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Te sientes irritable, Tienes dificultades para conciliar el sueño por las noches,
+\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Te sientes irritable, Tienes dificultades para conciliar el sueÃ±o por las noches,
 Te sientes sin valor o insignificante, Te sientes irritable, Ya no disfrutas las cosas que antes te gustaba hacer,
-Te sientes molesto o ansioso sin saber porqué.')),
+Te sientes molesto o ansioso sin saber porquÃ©.')),
 			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de manzana, lechuga y ajonjoli.
 n\n\nPREPARACION: 2 manzanas, 6 hojas de lechuga y 2 cucharadas de anjonjoli.
-\n DESCRIPCION: Prepara este jugo una hora antes de ir a la cama en caso de insomnio y también puedes tomar una tacita de té de tila con valeriana. Sigue nuestras recomendaciones y tendrás felices sueños.')).
+\n DESCRIPCION: Prepara este jugo una hora antes de ir a la cama en caso de insomnio y tambiÃ©n puedes tomar una tacita de tÃ© de tila con valeriana. Sigue nuestras recomendaciones y tendrÃ¡s felices sueÃ±os.')).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 tratamiento(licuado_de_kiwi_manzana_naranja_y_fresa) :-
 		        send(@lblExp1, selection('USTED SUFRE DE DEPRESION.
-\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Te sientes irritable, Tienes dificultades para conciliar el sueño por las noches, Te sientes sin valor o insignificante,
-Te sientes molesto o ansioso sin saber porqué, ya no disfrutas las cosas que antes te gustaba hacer.')),
+\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Te sientes irritable, Tienes dificultades para conciliar el sueÃ±o por las noches, Te sientes sin valor o insignificante,
+Te sientes molesto o ansioso sin saber porquÃ©, ya no disfrutas las cosas que antes te gustaba hacer.')),
 			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de kiwi, manzana, naranja y fresa.
 n\n\nPREPARACION: 2 kiwis, 2 manzanas, zumo de naranja y 4 fresas.
-\n DESCRIPCION: Prepara este jugo una hora antes de ir a la cama en caso de insomnio y también puedes tomar una tacita de té de tila con valeriana. Sigue nuestras recomendaciones y tendrás felices sueños.')).
+\n DESCRIPCION: Prepara este jugo una hora antes de ir a la cama en caso de insomnio y tambiÃ©n puedes tomar una tacita de tÃ© de tila con valeriana. Sigue nuestras recomendaciones y tendrÃ¡s felices sueÃ±os.')).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -403,11 +405,11 @@ n\n\nPREPARACION: 2 kiwis, 2 manzanas, zumo de naranja y 4 fresas.
 
 tratamiento(licuado_de_manzana_y_zanahoria) :-
 			send(@lblExp1, selection('USTED SUFRE DE COLITIS.
-\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Dolor abdominal, Tiene nauseas, Tiene cólicos, Ruidos en el abdomen, Estreñimiento o diarrea frecuentemente .')),
+\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Dolor abdominal, Tiene nauseas, Tiene cÃ³licos, Ruidos en el abdomen, EstreÃ±imiento o diarrea frecuentemente .')),
 			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de manzana y zanahoria.
 \n\n\nPREPARACION: 1 taza de jugo de manzana y 1/2 taza de zanahoria picada, licua hasta desaparecer los grumos cuela y bebe enseguida.
 \n DESCRIPCION: es depurativo y diuretico, ademas de un suave laxante eficaz en el tratamiento de la colitis. auxiliar en casos de
-inflamacion estomacal, estreñimiento y obesidad. actua como regulador de las funciones intestinales.')).
+inflamacion estomacal, estreÃ±imiento y obesidad. actua como regulador de las funciones intestinales.')).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -421,11 +423,11 @@ inflamacion estomacal, estreñimiento y obesidad. actua como regulador de las fun
 
 tratamiento(licuado_de_zanahoria_y_espinacas) :-
 		        send(@lblExp1, selection('USTED SUFRE DE HEMORROIDES.
-\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: tiene tensión y esta estresado.')),
+\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: tiene tensiÃ³n y esta estresado.')),
 			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de zanahoria y espinacas.
-\n\n\nPREPARACION: 8 zanahorias, 1 vaso de jugo de espinaca,consumir un por la mañana una vez por semana durante 1 mes.
+\n\n\nPREPARACION: 8 zanahorias, 1 vaso de jugo de espinaca,consumir un por la maÃ±ana una vez por semana durante 1 mes.
 \n DESCRIPCION: alivia las molestias de las hemorroides, es astrigente, cicatrizante y ablanda las partes inflamadas. mejora la digestion
-   para evitar estreñimiento, una de las causas de las hemorroides. nutre la piel, combate la comezon, mejora la formacion de placas en las arterias.')).
+   para evitar estreÃ±imiento, una de las causas de las hemorroides. nutre la piel, combate la comezon, mejora la formacion de placas en las arterias.')).
 
 
 
@@ -438,15 +440,15 @@ tratamiento(licuado_de_zanahoria_y_espinacas) :-
 
 /*colesterol*/
 
-tratamiento(licuado_de_piña_apio_y_durazno) :-
+tratamiento(licuado_de_piÃ±a_apio_y_durazno) :-
 		        send(@lblExp1, selection('USTED SUFRE DE COLESTEROL.
-\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Hipertensión, Infarto agudo y Angina de pecho.')),
-			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de piña, apio y durazno.
-\n\n\n\nPREPARACION: 1 vaso de jugo de piña, 1 tallo de apio, 1 durazno, licuar y tomar sin colar.
-\n DESCRIPCION: El consumo frecuente de apio en jugos o ensaladas, limpia la sangre, baja los niveles de colesterol, además de dar un efecto
-   refrescante y tonificante al cuerpo. Debido a su riqueza en sales minerales de reacción alcalina. Si el apio se prepara en caldo combinado
-   con cebolla neutraliza el exceso de acidez de la sangre, y facilita la eliminación de orina, previniendo la formación de piedras en el riñón
-   y la retención de líquidos.')).
+\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: HipertensiÃ³n, Infarto agudo y Angina de pecho.')),
+			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de piÃ±a, apio y durazno.
+\n\n\n\nPREPARACION: 1 vaso de jugo de piÃ±a, 1 tallo de apio, 1 durazno, licuar y tomar sin colar.
+\n DESCRIPCION: El consumo frecuente de apio en jugos o ensaladas, limpia la sangre, baja los niveles de colesterol, ademÃ¡s de dar un efecto
+   refrescante y tonificante al cuerpo. Debido a su riqueza en sales minerales de reacciÃ³n alcalina. Si el apio se prepara en caldo combinado
+   con cebolla neutraliza el exceso de acidez de la sangre, y facilita la eliminaciÃ³n de orina, previniendo la formaciÃ³n de piedras en el riÃ±Ã³n
+   y la retenciÃ³n de lÃ­quidos.')).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -458,11 +460,11 @@ tratamiento(licuado_de_almendra_yoghurt_y_trigo) :-
 		        send(@lblExp1, selection('USTED SUFRE DE VISTA CANSADA.
 \n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Necesita mas luz de la acostrumbrada para leer y Le cuesta ver nitidamente objetos cercanos.')),
 			send(@lblExp2, selection('LE RECOMINEDO TOMAR: Licuado de almendra, yoghurt y trigo.
-\n\n\n\nPREPARACION: 1 vaso de leche fría o un vaso de yoghurt natural, 7 almendras peladas, 1 cucharada de pasitas, 1 cucharada de salvado,
-        1 cucharada de germen de trigo, 1 cucharada de miel de abeja, Se licuan todos los ingredientes y se toma todos los días
-        en la mañana a la hora del desayuno.
+\n\n\n\nPREPARACION: 1 vaso de leche frÃ­a o un vaso de yoghurt natural, 7 almendras peladas, 1 cucharada de pasitas, 1 cucharada de salvado,
+        1 cucharada de germen de trigo, 1 cucharada de miel de abeja, Se licuan todos los ingredientes y se toma todos los dÃ­as
+        en la maÃ±ana a la hora del desayuno.
 
-\n      DESCRIPCION: Este licuado es muy nutritivo, pues fortalece la vista y lo pueden tomar desde los niños hasta las personas de cualquier edad.')).
+\n      DESCRIPCION: Este licuado es muy nutritivo, pues fortalece la vista y lo pueden tomar desde los niÃ±os hasta las personas de cualquier edad.')).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -470,16 +472,16 @@ tratamiento(licuado_de_almendra_yoghurt_y_trigo) :-
 
 
 
-/*infeccino de riñones*/
+/*infeccino de riÃ±ones*/
 
 tratamiento(licuado_de_naranja_pepino_y_jicama) :-
-		        send(@lblExp1, selection('USTED SUFRE DE INFECCION DE RIÑONES.
+		        send(@lblExp1, selection('USTED SUFRE DE INFECCION DE RIÃ‘ONES.
 \n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: dolor de espalda baja,necesidad de orinar con mucha frecuencia, dolor o ardor al orinar.')),
 			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de naranja, pepino y jicama.
-\n\n\n\nPREPARACION: PREPARACION: 1 vaso de jugo de naranja, Medio pepino, ¼ de jícama, 1 tallo de apio, ½ manzana, 2 ramas de perejil.
-\n      DESCRIPCION: Puede preparar un vaso de jugo de naranja licuado con medio pepino pelado y picado y un trozo de jícama pelada y picada,
+\n\n\n\nPREPARACION: PREPARACION: 1 vaso de jugo de naranja, Medio pepino, Â¼ de jÃ­cama, 1 tallo de apio, Â½ manzana, 2 ramas de perejil.
+\n      DESCRIPCION: Puede preparar un vaso de jugo de naranja licuado con medio pepino pelado y picado y un trozo de jÃ­cama pelada y picada,
         o ponga a licuar el jugo de naranja con un tallo de apio, media manzana pelada y dos ramas de perejil. Es mejor tomar estos jugos
-        sin colar para que las fibras de las verduras ayuden a evitar también el estreñimiento.')).
+        sin colar para que las fibras de las verduras ayuden a evitar tambiÃ©n el estreÃ±imiento.')).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -490,12 +492,12 @@ tratamiento(licuado_de_naranja_pepino_y_jicama) :-
 
 tratamiento(licuado_de_valeriana_manzanilla_y_menta) :-
 		         send(@lblExp1, selection('USTED SUFRE DE INSOMNIO.
-\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: ansiedad, se despierta constantemente durante la madrugada, dificultad para conciliar el sueño.')),
+\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: ansiedad, se despierta constantemente durante la madrugada, dificultad para conciliar el sueÃ±o.')),
 			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de valeriana, manzanilla y menta.
 \n\n\n\nPREPARACION: 1 cucharada sopera de lopulo, 1 cucharada sopera de valeriana, 2 cucharadas soperas de manzanilla, 2 cucharadas soperas de menta piperita.
 \n DESCRIPCION: Colocar 1 cucharada sopera bien colmada de esa mezcla, en una taza de agua hirviendo, tapar y
    dejar reposar 20 minutos, luego tomar edulcorando a gusto y a roncar se ha dicho.Se debe ingerir al menos 2 horas antes de acostarse
-   y varios días seguidos hasta comprobar sus efectos.')).
+   y varios dÃ­as seguidos hasta comprobar sus efectos.')).
 
 
 
@@ -544,7 +546,7 @@ nueva_imagen(Ventana, Imagen) :-new(Figura, figure),
 
 /* Aqui El Codigo Para La Interface Principal*/
 
-main :-new(@dial, dialog('SISTEMA EXPERTO - Nutriología', size(1000,1000))),
+main :-new(@dial, dialog('SISTEMA EXPERTO - NutriologÃ­a', size(1000,1000))),
 	new(L, label(nombre,'BIENVENIDO A SU CONSULTA')),
 	new(@texto, label(nombre,'Deacuerdo a los datos proporcionados el remedio es:')),
 	new(@resp1, label(nombre,'')),
@@ -556,11 +558,11 @@ main :-new(@dial, dialog('SISTEMA EXPERTO - Nutriología', size(1000,1000))),
 	new(@boton, button('Iniciar consulta',
 	 message(@prolog, botones)
 	)),
-	new(@btnExplica,button('¿Qué es éste remedio?'	)),
+	new(@btnExplica,button('Â¿QuÃ© es Ã©ste remedio?'	)),
 	send(@dial, append(L)),
 
 
-	new(@btntratamiento,button('¿Tratamiento?'	)),
+	new(@btntratamiento,button('Â¿Tratamiento?'	)),
 
 
 
@@ -577,7 +579,7 @@ borrado:-	send(@resp1, selection('')).
 
 
 iniciar:-	new(@principal,dialog('SISTEMA EXPERTO DE LICUADOS NUTRITIVOS Y MEDICINALES ',size(700,300))),
-		new(L2,label(text,'                  INSTITUTO TECNOLÓGICO DE CHIHUAHUA II         ')),
+		new(L2,label(text,'                  INSTITUTO TECNOLÃ“GICO DE CHIHUAHUA II         ')),
 /*new(L3,label(text,'      \n\n                ')),*/
 new(L4,label(text,'                  ING. SISTEMAS COMPUTACIONALES')),nl,nl,
 new(L5,label(text,'                  SEMESTRE: 8vo')),nl,nl,
@@ -609,7 +611,7 @@ send(@principal,append(L11)),
 fin :- halt.
 
 %Metodo transient_for
-/*Indica que este cuadro es solo un marco de apoyo para el argumento, esta declaración tiene los siguientes efector
+/*Indica que este cuadro es solo un marco de apoyo para el argumento, esta declaraciÃ³n tiene los siguientes efector
 Informar a un gestor de ventanas: fuente: http://64.233.179.104/translate_c?hl=es&u=http://gollem.science.uva.nl:8080
 /class%3Fname%3Dframe&prev=/search%3Fq%3Dtransient_for%26hl%3Des%26sa%3DG*/
 
