@@ -80,6 +80,7 @@ hipotesis(enfermedades_cardiovasculares) :- enfermedades_cardiovasculares,!.
 
 hipotesis(diabetes) :-diabetes,!.
 
+
 hipotesis(osteoporosis) :- osteoporosis,!.
 
 /*
@@ -148,6 +149,23 @@ diabetes :- diabet,
                 verifica('¿Tiene sensación de hambre inusual?'),
 		verifica('¿Tiene sensación excesiva de sed?'),
                 verifica('¿Padece de pérdida de peso?').
+		
+/*osteoporosis*/
+
+osteoporosis :- osteoporo,
+
+		verifica('¿Tiene nula practica de actividad fisica?'),
+		verifica('¿Consume cigarrillos, alcohol o cafe?'),
+		verifica('¿Tiene un bajo consumo de calcio?'),
+		verifica('¿Presenta dolores en las articulaciones?'),
+		verifica('¿Tiene dolores musculares?'),
+		verifica('¿Presenta de fragilidad en los huesos?'),
+		verifica('¿Siente los huesos debiles?'),
+		verifica('¿Se fractura con facilidad?'),
+		verifica('¿Tiene dolor de espalda?'),
+		verifica('¿Percibe perdida de estatura?'),
+		verifica('¿Presenta deformaciones en la columnsa vertebral?').
+
 /*
 licuado_de_zanahoria_y_apio :- sobre_peso,
 		verifica('¿fatiga con poco esfuerzo?'),
@@ -164,8 +182,8 @@ licuado_redu_mess :- sobre_peso,
 */
 
 
-/*resfriado*/
-
+/*resfriado , osteoporosis*/
+/*
 licuado_de_naranja_mandarina_piña_limon_y_miel :- resfriado,
 		verifica('¿goteo y congestion de la nariz?'),
 		verifica('¿cosquilleo en la garganta?'),
@@ -176,7 +194,7 @@ licuado_de_naranja_mandarina_piña_limon_y_miel :- resfriado,
 		verifica('¿tos seca y leve?'),
 		verifica('¿dolor de cabeza?'),
 		verifica('¿tiene escalofrios?').
-
+*/
 
 
 /*depresion*/
@@ -254,7 +272,7 @@ licuado_de_valeriana_manzanilla_y_menta :- insomnio,
 obesidadd :- verifica('¿Comes más de tres comidas al dia y no haces ejercicio?'),!.
 enfermedades_cardio :- verifica('¿Tienes altos niveles de colesterol?'),!.
 diabet :- verifica('¿Sensación de malestar en el estómago y vómitos.?'),!.
-resfriado :- verifica('¿goteo y congestion de la nariz?'),!.
+osteoporo :- verifica('¿Presenta dolor en huesos o articulaciones?'),!.
 depresion :- verifica('¿te sientes irritable?'),!.
 colitis :- verifica('¿dolor abdominal?'),!.
 hemorroides :- verifica('¿esta usted estresado?'),!.
