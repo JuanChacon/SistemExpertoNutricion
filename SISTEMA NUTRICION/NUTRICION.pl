@@ -86,6 +86,15 @@ hipotesis(osteoporosis) :- osteoporosis,!.
 
 hipotesis(desnutricion) :- desnutricion,!.
 
+
+hipotesis(anemia) :- anemia,!.
+
+
+hipotesis(bulimia) :- bulimia,!.
+
+
+hipotesis(Hipotiroidismo) :- Hipotiroidismo,!.
+
 /*
 hipotesis(licuado_de_zanahoria_y_apio) :- licuado_de_zanahoria_y_apio,!.
 
@@ -227,7 +236,7 @@ bulimia :- bulim,
 		
 /*Hipotiroidismo*/
 
-Hipotiroidismo :- Hipotiro,
+Hipotiroidismo :- Hipotirod,
 
 		verifica('¿Defeca heces duras o presenta estreñimiento?'),
 		verifica('¿Tiene un aumento de la sensibilidad a la temperatura fría?'),
@@ -309,7 +318,7 @@ licuado_de_manzana_y_zanahoria :- colitis,
 
 
 
-/*hemorroides*/
+/*hemorroides , bulimia*/
 /*
 licuado_de_zanahoria_y_espinacas :- hemorroides,
 
@@ -318,7 +327,7 @@ licuado_de_zanahoria_y_espinacas :- hemorroides,
 */
 
 
-/*colesterol*/
+/*colesterol , Hipotiroidismo*/
 /*
 licuado_de_piña_apio_y_durazno :- colesterol,
 
@@ -360,7 +369,7 @@ osteoporo :- verifica('¿Presenta dolor en huesos o articulaciones?'),!.
 desnutricio :- verifica('¿Tiene perdida de peso?'),!.
 anem :- verifica('¿Tiene sensacion de debilidad?'),!.
 bulim :- verifica('¿Siente alguna preocupacion al comer y deseos incontrolables por comer?'),!.
-Hipotiro :- verifica('¿Tiene demasiada fatiga o se siente lento?'),!.
+Hipotirod :- verifica('¿Tiene demasiada fatiga o se siente lento?'),!.
 vista_cansada :- verifica('¿Necesita más luz de la acostumbrada para leer?'),!.
 infeccion_de_riñones :- verifica('¿dolor o ardor al orinar?'),!.
 insomnio :- verifica('¿se despierta constantemente durante la madrugada?'),!.
@@ -463,7 +472,7 @@ tratamiento(licuado_redu_mess) :-
 /*resfriado*/
 
 tratamiento(osteoporosis) :-
-			      send(@lblExp1, selection('ENFERMEDAD OSTEOPOROSIS. \n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA DETERMINAMOS SU TRATAMIENTO: \n
+			      send(@lblExp1, selection('ENFERMEDAD OSTEOPOROSIS. \n DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA: \n
 			      Consumo de sustancias toxicas, poco consumo de calcio, dolor de articulaciones, dolores musculares, fragilidad en los huesos \n 
 			      debilidad en los huesos, vulnerabilidad ante fracturas, dolor de espalda, perdida de estatura, deformacion en la columna vertebral.')),
 			      send(@lblExp2,selection('USTED SUFRE DE OSTEPOROSIS. \n
@@ -477,21 +486,16 @@ DESCRIPCION: Aunque el tratamiento farmacológico es muy importante existen otra
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-/*depresion*/
-
-
-tratamiento(licuado_de_manzana_lechuga_y_ajonjoli) :-
-		        send(@lblExp1, selection('USTED SUFRE DE DEPRESION.
-\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Te sientes irritable, Tienes dificultades para conciliar el sueño por las noches,
-Te sientes sin valor o insignificante, Te sientes irritable, Ya no disfrutas las cosas que antes te gustaba hacer,
-Te sientes molesto o ansioso sin saber porqué.')),
-			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de manzana, lechuga y ajonjoli.
-n\n\nPREPARACION: 2 manzanas, 6 hojas de lechuga y 2 cucharadas de anjonjoli.
-\n DESCRIPCION: Prepara este jugo una hora antes de ir a la cama en caso de insomnio y también puedes tomar una tacita de té de tila con valeriana. Sigue nuestras recomendaciones y tendrás felices sueños.')).
+tratamiento(desnutricion) :-
+		        send(@lblExp1, selection('USTED SUFRE DE DESNUTRICION. \n 
+			DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA: \n 
+			debilidad de los musculos, fatiga, falta de energia, suceptibilidad a infecciones, \n 
+			La curacion de cortes es retardada y prolongada, sientes irritabilidad y mareos.')),
+			send(@lblExp2, selection('USTED SUFRE DE DESNUTRICION. \n
+			Tratamiento: Add your shit.')).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+/*
 tratamiento(licuado_de_kiwi_manzana_naranja_y_fresa) :-
 		        send(@lblExp1, selection('USTED SUFRE DE DEPRESION.
 \n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Te sientes irritable, Tienes dificultades para conciliar el sueño por las noches, Te sientes sin valor o insignificante,
@@ -499,42 +503,29 @@ Te sientes molesto o ansioso sin saber porqué, ya no disfrutas las cosas que an
 			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de kiwi, manzana, naranja y fresa.
 n\n\nPREPARACION: 2 kiwis, 2 manzanas, zumo de naranja y 4 fresas.
 \n DESCRIPCION: Prepara este jugo una hora antes de ir a la cama en caso de insomnio y también puedes tomar una tacita de té de tila con valeriana. Sigue nuestras recomendaciones y tendrás felices sueños.')).
-
+*/
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
 
 /*colitis*/
 
-tratamiento(licuado_de_manzana_y_zanahoria) :-
-			send(@lblExp1, selection('USTED SUFRE DE COLITIS.
-\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Dolor abdominal, Tiene nauseas, Tiene cólicos, Ruidos en el abdomen, Estreñimiento o diarrea frecuentemente .')),
-			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de manzana y zanahoria.
-\n\n\nPREPARACION: 1 taza de jugo de manzana y 1/2 taza de zanahoria picada, licua hasta desaparecer los grumos cuela y bebe enseguida.
-\n DESCRIPCION: es depurativo y diuretico, ademas de un suave laxante eficaz en el tratamiento de la colitis. auxiliar en casos de
-inflamacion estomacal, estreñimiento y obesidad. actua como regulador de las funciones intestinales.')).
+tratamiento(anemia) :-
+			send(@lblExp1, selection('ENFERMEDAD ANEMIA. \n 
+			DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA: \n 
+			add sintomas anemia.')),
+			send(@lblExp2, selection('USTED SUFRE DE DESNUTRICION. \n
+			Tratamiento: Add your shit.')).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
-
-
 /*hemorroides*/
 
-tratamiento(licuado_de_zanahoria_y_espinacas) :-
-		        send(@lblExp1, selection('USTED SUFRE DE HEMORROIDES.
-\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: tiene tensión y esta estresado.')),
-			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de zanahoria y espinacas.
-\n\n\nPREPARACION: 8 zanahorias, 1 vaso de jugo de espinaca,consumir un por la mañana una vez por semana durante 1 mes.
-\n DESCRIPCION: alivia las molestias de las hemorroides, es astrigente, cicatrizante y ablanda las partes inflamadas. mejora la digestion
-   para evitar estreñimiento, una de las causas de las hemorroides. nutre la piel, combate la comezon, mejora la formacion de placas en las arterias.')).
-
-
+tratamiento(bulimia) :-
+		        send(@lblExp1, selection('ENFERMEDAD BULIMIA. \n 
+			DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA: \n 
+			add sintomas anemia.')),
+			send(@lblExp2, selection('USTED SUFRE DE DESNUTRICION. \n
+			Tratamiento: Add your shit.')).
 
 
 
@@ -545,15 +536,12 @@ tratamiento(licuado_de_zanahoria_y_espinacas) :-
 
 /*colesterol*/
 
-tratamiento(licuado_de_piña_apio_y_durazno) :-
-		        send(@lblExp1, selection('USTED SUFRE DE COLESTEROL.
-\n\n\nYA QUE PADESE LOS SIGUIENTES SINTOMAS: Hipertensión, Infarto agudo y Angina de pecho.')),
-			send(@lblExp2, selection('LE RECOMIENDO TOMAR: Licuado de piña, apio y durazno.
-\n\n\n\nPREPARACION: 1 vaso de jugo de piña, 1 tallo de apio, 1 durazno, licuar y tomar sin colar.
-\n DESCRIPCION: El consumo frecuente de apio en jugos o ensaladas, limpia la sangre, baja los niveles de colesterol, además de dar un efecto
-   refrescante y tonificante al cuerpo. Debido a su riqueza en sales minerales de reacción alcalina. Si el apio se prepara en caldo combinado
-   con cebolla neutraliza el exceso de acidez de la sangre, y facilita la eliminación de orina, previniendo la formación de piedras en el riñón
-   y la retención de líquidos.')).
+tratamiento(Hipotiroidismo) :-
+		        send(@lblExp1, selection('ENFERMEDAD HIPOTIROIDISMO. \n 
+			DEBIDO A LOS SIGUIENTES SINTOMAS QUE USTED PRESENTA: \n 
+			add sintomas anemia.')),
+			send(@lblExp2, selection('USTED SUFRE DE DESNUTRICION. \n
+			Tratamiento: Add your shit.')).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
