@@ -78,10 +78,13 @@ hipotesis(obesidad) :- obesidad,!.
 hipotesis(enfermedades_cardiovasculares) :- enfermedades_cardiovasculares,!.
 
 
-hipotesis(diabetes) :-diabetes,!.
+hipotesis(diabetes) :- diabetes,!.
 
 
 hipotesis(osteoporosis) :- osteoporosis,!.
+
+
+hipotesis(desnutricion) :- desnutricion,!.
 
 /*
 hipotesis(licuado_de_zanahoria_y_apio) :- licuado_de_zanahoria_y_apio,!.
@@ -165,7 +168,84 @@ osteoporosis :- osteoporo,
 		verifica('¿Tiene dolor de espalda?'),
 		verifica('¿Percibe perdida de estatura?'),
 		verifica('¿Presenta deformaciones en la columnsa vertebral?').
+		
 
+/*desnutricion*/
+
+desnutricion :- desnutricio,
+
+		verifica('¿Presenta debilidad de los musculos?'),
+		verifica('¿Siente mucha fatiga?'),
+		verifica('¿Siente que le falta energia?'),
+		verifica('¿Actualmente es mas suceptible a infecciones?'),
+		verifica('¿La curacion de cortes es retardada y prolongada?'),
+		verifica('¿Siente irritabilidad y mareos?'),
+		verifica('¿Su piel y cabello estan mas secos?'),
+		verifica('¿Presenta diarrea o estreñimiento?'),
+		verifica('¿Presenta rasgos de depresion?'),
+		verifica('¿Se siente irritable y lento?'),
+		verifica('¿Tiene hinchazon del abdomen o piernas?').
+
+
+/*anemia*/
+
+anemia :- anem,
+		
+		verifica('¿Presenta fatiga?'),
+		verifica('¿Siente debilidad?'),
+		verifica('¿Tiene la piel palida?'),
+		verifica('¿Presenta dolor de cabeza?'),
+		verifica('¿Presenta mareos?'),
+		verifica('¿Tiene una temperatura corporal baja?'),
+		verifica('¿Presenta entumicimiento en manos y pies?'),
+		verifica('¿Tiene difucultad para respirar?'),
+		verifica('¿Siente latidos cardiacos rapidos/irregulares?'),
+		verifica('¿Tiene dolor de hombros?'),
+		verifica('¿Siente irritabilidad?'),
+		verifica('¿Presenta dificultad para respirar?'),
+		verifica('¿Tiene una dieta pobre?').
+		
+
+/*bulimia*/
+
+bulimia :- bulim,
+
+		verifica('¿Vomita despues de comer?'),
+		verifica('¿Siente algun reproche despues de comer?'),
+		verifica('¿Ayuna muy seguido y/o sigue dietas muy estrictas?'),
+		verifica('¿Presenta miedo de engordar?'),
+		verifica('¿Presenta apatia?'),
+		verifica('¿Presenta fatiga e irritabilidad?'),
+		verifica('¿Tiene cambios en el ritmo del sueño que perjudican su rendimiento?'),
+		verifica('¿Tiene distension abdominal?'),
+		verifica('¿Presenta estreñimiento?'),
+		verifica('¿Presenta perdiada en el esmalte dental?'),
+		verifica('¿Tiene lesiones en la graganta?'),
+		verifica('¿Presenta ansiedad y preocupacion por el peso corporal?'),
+		verifica('¿Hace uso de laxantes y dietas restrictivas?').
+		
+		
+/*Hipotiroidismo*/
+
+Hipotiroidismo :- Hipotiro,
+
+		verifica('¿Defeca heces duras o presenta estreñimiento?'),
+		verifica('¿Tiene un aumento de la sensibilidad a la temperatura fría?'),
+		verifica('¿Presenta dolor muscular o articular?'),
+		verifica('¿Tiene palidez o piel reseca?'),
+		verifica('¿Presenta tristeza o depresión?'),
+		verifica('¿Tiene cabello o uñas quebradizas y débiles?'),
+		verifica('¿Debilidad?'),
+		verifica('¿Aumento de peso?'),
+		verifica('¿Presenta disminución del sentido del gusto y el olfato?'),
+		verifica('¿Presenta ronquera?'),
+		verifica('¿Presenta hinchazón de la cara, las manos y los pies?'),
+		verifica('¿Discurso lento?'),
+		verifica('¿Tiene engrosamiento de la piel?'),
+		verifica('¿Presenta caída del vello de las cejas?'),
+		verifica('¿Tiene baja temperatura corporal?'),
+		verifica('¿Siente una frecuencia cardíaca lenta?').
+		
 /*
 licuado_de_zanahoria_y_apio :- sobre_peso,
 		verifica('¿fatiga con poco esfuerzo?'),
@@ -197,7 +277,8 @@ licuado_de_naranja_mandarina_piña_limon_y_miel :- resfriado,
 */
 
 
-/*depresion*/
+/*depresion , desnutricion*/
+/*
 licuado_de_manzana_lechuga_y_ajonjoli :- depresion,
 		verifica('¿te sientes irritable?'),
 		verifica('¿tienes dificultades para conciliar el sueño por las noches?'),
@@ -213,34 +294,37 @@ licuado_de_kiwi_manzana_naranja_y_fresa :- depresion,
 		verifica('¿te sientes irritable?'),
 		verifica('¿ya no disfrutas las cosas que antes te gustaba hacer?'),
 		verifica('¿te sientes molesto o ansioso sin saber porqué?').
+*/
 
 
 
-
-/*colitis*/
+/*colitis , anemia*/
+/*
 licuado_de_manzana_y_zanahoria :- colitis,
 		verifica('¿tiene nauseas?'),
 		verifica('¿tiene colicos?'),
 		verifica('¿ruidos en el abdomen?'),
 		verifica('¿estreñimiento o diarrea frecuentemente?').
-
+*/
 
 
 
 /*hemorroides*/
+/*
 licuado_de_zanahoria_y_espinacas :- hemorroides,
 
 		verifica('¿tiene tension?').
 
-
+*/
 
 
 /*colesterol*/
+/*
 licuado_de_piña_apio_y_durazno :- colesterol,
 
 		verifica('¿infarto agudo?'),
 		verifica('¿tiene usted hipertension?').
-
+*/
 
 
 /*vistas_cansada*/
@@ -273,10 +357,10 @@ obesidadd :- verifica('¿Comes más de tres comidas al dia y no haces ejercicio?
 enfermedades_cardio :- verifica('¿Tienes altos niveles de colesterol?'),!.
 diabet :- verifica('¿Sensación de malestar en el estómago y vómitos.?'),!.
 osteoporo :- verifica('¿Presenta dolor en huesos o articulaciones?'),!.
-depresion :- verifica('¿te sientes irritable?'),!.
-colitis :- verifica('¿dolor abdominal?'),!.
-hemorroides :- verifica('¿esta usted estresado?'),!.
-colesterol :- verifica('¿angina de pecho?'),!.
+desnutricio :- verifica('¿Tiene perdida de peso?'),!.
+anem :- verifica('¿Tiene sensacion de debilidad?'),!.
+bulim :- verifica('¿Siente alguna preocupacion al comer y deseos incontrolables por comer?'),!.
+Hipotiro :- verifica('¿Tiene demasiada fatiga o se siente lento?'),!.
 vista_cansada :- verifica('¿Necesita más luz de la acostumbrada para leer?'),!.
 infeccion_de_riñones :- verifica('¿dolor o ardor al orinar?'),!.
 insomnio :- verifica('¿se despierta constantemente durante la madrugada?'),!.
